@@ -1,9 +1,8 @@
-from board import Board
+from controller import Controller
 
 
 def main():
-    board = Board(3)
-    print(board)
+    new_controller = Controller()
 
 
 if __name__ == '__main__':

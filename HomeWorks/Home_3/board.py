@@ -1,7 +1,10 @@
 class Board:
     def __init__(self, size):
         self.size = size
-        self.board = [['*'] * size] * size
+        self.board = ['*'] * size
+        for i in range(size):
+            self.board[i] = ['*'] * size
+        self.all_step = set()
 
     def __str__(self) -> str:
         """
