@@ -1,3 +1,5 @@
+import sys
+
 from human import Human
 from computer import Computer
 from board import Board
@@ -11,7 +13,7 @@ class Controller:
         self.gamers = []
         new_view = View()
         menu_choose = new_view.menu_choose
-        size = new_view.size
+
 
         match menu_choose:
             case '1':
@@ -27,7 +29,8 @@ class Controller:
                 first_player = Computer()
                 second_player = Computer('0')
             case _:
-                exit()
+                sys.exit()
+        size = new_view.size
         self.gamers.append(first_player)
         self.gamers.append(second_player)
 
@@ -41,7 +44,7 @@ class Controller:
             now_play = self.gamers[motion % 2]
             now_figure = now_play.figure
             if type(now_play).__name__ == 'Human':
-                step = new_view.human_step(now_play.name)
+                step = new_view.human_step(now_play.name, self.board.all_step)
             else:
                 step = now_play.new_step(self.board.size, self.board.all_step)
                 new_view.computer_step(now_play.name, step)
