@@ -21,7 +21,7 @@ if __name__ == '__main__':
     length = 25
     lst_x = [i for i in range(length)]
     lst_y = [randint(1, 50) for i in range(length)]
-    # lst_y = [2 * x + 2 for x in lst_x] # при линнейной зависимости корреляция пирсона положительна и равна 1
+    # lst_y = [2 * x + 2 for x in lst_x] # при линейной зависимости корреляция пирсона положительна и равна 1
     Mx = sum(lst_x) / length
     My = sum(lst_y) / length
     print('Rxy = ', end="")
