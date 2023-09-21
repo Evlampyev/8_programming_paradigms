@@ -71,23 +71,22 @@ def binary_search(lst: List[int], target: int) -> int:
 
 
 def main():
-    lst = [randint(1, 20) for _ in range(10)]
-    print(f"До сортировки: {lst}")
+    lst = [randint(1, 1000) for _ in range(4000)]
+    print(f"До сортировки:\n {lst}")
     now = time()
     # print(now)
-    print(buble_sort(lst))
-    print(f"{time() - now : 4.8f}")
+    print(f"После сортировки пузырьком: \n{buble_sort(lst)}")
+    print(f"Затраченное время: {time() - now : 4.8f}")
     now = time()
     merge_sorting_lst = merge_sorting(lst)
-    print(merge_sorting_lst)
-    print(f"{time() - now : 4.8f}")
-    target = randint(0, 20)
-    print(target)
+    print(f"После сортировки слиянием: \n{merge_sorting_lst}")
+    print(f"Затраченное время: {time() - now : 4.8f}")
+    target = randint(0, 1000)
     result = binary_search(merge_sorting_lst, target)
     if result is None:
-        print("Такого числа нет")
+        print(f"Числа {target} в списке - нет")
     else:
-        print(f"Искомое число:{target} стоит на {result}")
+        print(f"У элемента списка равного {target} индекс {result}")
 
 
 if __name__ == '__main__':
